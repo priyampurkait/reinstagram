@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  font-family: "Pacifico", cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.link {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .col-md-w {
+    max-width: 440px;
+  }
+}
+@media (min-width: 640px) {
+  .post-width {
+    max-width: 658px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.sidebar {
+  max-width: 293px;
 }
 
-.App-link {
-  color: #61dafb;
+.sticky-top {
+  top: 5.125rem;
 }
 
-@keyframes App-logo-spin {
-  from {
+.globalnav {
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.cont-main {
+  width: 100%;
+}
+
+.container {
+  max-width: 967px;
+}
+
+.form-control {
+  border: 2px solid #ced4da;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+.form-control:focus {
+  color: #636464;
+  background-color: #fff;
+  border-color: #636464;
+  border: 2px solid;
+  box-shadow: none;
+}
+
+.nav-height {
+  height: 3.625rem;
+}
+.filter-loading {
+  filter: contrast(0%);
+}
+
+.avator {
+  height: 2rem;
+  width: 2rem;
+  border: 2px solid rgb(185, 185, 185);
+}
+
+.loader {
+  border: 4px solid #b7e8ff;
+  border-radius: 50%;
+  border-top: 4px solid #247db9;
+  width: 21px;
+  height: 21px;
+  -webkit-animation: spin 0.5s linear infinite; /* Safari */
+  animation: spin 0.5s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.dropdown-menu {
+  padding: 0px;
+
+  margin-top: 1rem;
+  margin-left: -8rem;
+}
+
+.navbar-nav .dropdown-menu {
+  position: absolute;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #c8c8c8;
 }
