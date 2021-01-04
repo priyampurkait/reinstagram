@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import moment from 'moment';
 
-function Post({ imgUri, username, caption }) {
+function Post({ imgUri, username, caption,timestamp }) {
+  let formatted= moment.unix(timestamp).format("LLLL ");
+
   const [uname, setuname] = useState("");
   useEffect(() => {
     username.get().then((doc) => {
@@ -8,6 +11,9 @@ function Post({ imgUri, username, caption }) {
       setuname(doc.data().username);
     });
   }, []);
+
+// var formatted = moment.format("dd.mm.yyyy hh:MM:ss");
+
   return (
     <div className="card mb-4">
       <div className="card-header py-3 bg-white d-inline-flex align-middle">
@@ -25,7 +31,7 @@ function Post({ imgUri, username, caption }) {
           <span className="">{caption}</span>
         </p>
       </div>
-      <div className="card-footer text-muted bg-white">2 days ago</div>
+      <div className="card-footer text-muted bg-white">{formatted}</div>
     </div>
   );
 }

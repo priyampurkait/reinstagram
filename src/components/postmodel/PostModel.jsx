@@ -19,7 +19,7 @@ function PostModel() {
   };
 
   const uploadPost = () => {
-    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    const uploadTask = storage.ref(`images/${image?.name}`).put(image);
     uploadTask.on(
       firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) => {
@@ -102,6 +102,7 @@ function PostModel() {
                 type="file"
                 className="form-file-input"
                 id="customFile"
+                required
               />
               <label className="form-file-label">
                 {file === "" ? (
